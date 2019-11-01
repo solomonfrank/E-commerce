@@ -5,6 +5,7 @@ import Header from '../../components/Header/Header';
 import AboutUs from '../../components/AboutUs/AboutUs';
 import SideBar from '../../components/SideBar/SideBar';
 import Footer from '../../components/Footer/Footer'
+import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
 
 
 import './homePage.scss';
@@ -49,6 +50,7 @@ class HomePage extends Component {
         return (
           <div className='body__template'>
             <div className='sidebar__section'>
+                <ToggleIcon />
                 <SideBar />
             </div>
             <header className='header__section'>

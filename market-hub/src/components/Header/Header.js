@@ -8,7 +8,8 @@ const Header = () => {
     return (
         <header className='header'>
         <div className='logo__box'  >
-            <img className='logo' src='images/logo4.png' alt='marketHub_Logo'/>
+            <p className='logo__box--title'>Market-Hub</p>
+            {/* <img className='logo' src='images/logo4.png' alt='marketHub_Logo'/> */}
         </div>
         <div className='text__box'>
             <h1 className='header__text'>
