@@ -1,0 +1,19 @@
+.collection__container {
+  
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    
+
+    .collection__content {
+        border: 1px solid gray;
+        background-color: white;
+      
+&--image {
+    width: 100%;
+}
+    }
+
+  
+}
+

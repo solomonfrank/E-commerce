@@ -1,0 +1,35 @@
+
+.nav__footer {
+    list-style-type: none;
+    display: grid;
+   margin: 0 auto;
+
+   
+
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+    .nav__link {
+        text-decoration: none;
+        font-size: 19px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        color: goldenrod;
+        transition: all .5s;
+        padding: 15px;
+
+        &:hover {
+            background-color: rgba(0,0,0,.8);
+            transform: translateY(-5px);
+        }
+
+    }
+
+}
+.copyright{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 5px;
+}

@@ -1,0 +1,85 @@
+
+.about__title {
+    text-align: center;
+    background-image: linear-gradient(to right,rgba(226, 177, 30, 0.9), rgba(255, 191, 0, 0.925));
+    display:inline-block;
+    margin: 0 auto;
+    text-transform: capitalize;
+    background-clip: text;
+    color: transparent;
+   text-shadow: 4px rgba(0, 0, 0, 0.9);
+    font-size:26px;
+    
+    &:hover{
+        transform: skewY(3deg) skewX(10deg)
+    }
+   
+}
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media only screen and (max-width:1300px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(min-content, 1fr)
+    }
+
+  
+}
+.center-text {
+    text-align:center;
+    margin:50px;
+
+ 
+}
+.para-header {
+    margin: 40px;
+    
+}
+
+.paragraph {
+    margin : 0 40px;
+    line-height: 1.7;
+}
+.composition {
+    position: relative;
+
+    .composition__photo {
+
+        @media only screen and (max-width:1300px) {
+           display: none;
+        }
+        width: 50%;
+        border-radius: 2px;
+        position: absolute;
+        margin-top:20px;
+        z-index: 10;
+        transition: all .2s;
+        outline-offset: 10px;
+    
+        &--1 {
+            left: 0;
+            top: -2rem;
+        }
+        &--2 {
+            top: 0;
+            right: 10rem;
+        }
+        &--3 {
+            left: 15%;
+            top: 5rem;
+        }
+        &:hover {
+            transform: scale(1.04);
+            z-index: 20;;
+            outline: 5px solid rgba(255, 191, 0, 0.925);
+            box-shadow: 2px 1px 1rem rgba(0, 0, 0, 0.9)
+        }
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.9);
+    }
+
+}
+

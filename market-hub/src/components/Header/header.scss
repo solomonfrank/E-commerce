@@ -1,0 +1,123 @@
+
+$color-primary: rgb(255,191,0);
+$color-white:#fff;
+.header {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.4)
+    ), url('../../images/shop2.jpg');
+    background-size: cover;
+    height: 95vh;
+    background-position: center;
+    
+    .logo__box {
+        position: absolute;
+        top:20px;
+        left:30px;
+    }
+
+    .logo {
+     
+        height:80px;
+      
+    }
+
+    .text__box {
+        position: absolute;
+        top: 20%;
+        left: 60%;
+        transform: translate(-50%, 50%);
+        text-align:center;
+        @media only screen and (max-width:990px) {
+       width: 60%;
+       left:50%;
+        }
+
+    }
+
+.header__text {
+    text-transform: uppercase;
+    color: #ffff;
+
+   
+
+    &--primary {
+        display: block;
+        letter-spacing:15px;
+        text-align:center;
+        padding:10px;
+        animation-name: moveUp;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      
+    }
+    &--sub {
+        display: block;
+        font-size: 17px;
+        letter-spacing: 15px;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        margin-bottom:10px;
+        
+    }
+    &--btn {
+        border: none;
+        border-radius: 23px;
+       text-align: center;
+        padding: 15px 40px;
+        animation-name: rotateBtn;
+        animation-duration: 2s;
+        text-transform: uppercase;
+        background-color:white;
+        color: rgb(255,191,0);
+        text-decoration: none;
+        font-weight: 400;
+        display:  inline-block;
+        font-size:18px;
+        transition: all 1s;
+      
+    }
+    &--btn:hover {
+        background-color: $color-primary;
+        color: white;
+    }
+}
+  
+}
+
+@keyframes moveUp {
+    0% {
+     transform: translateY(50px);
+    }
+
+    100% {
+   transform : translateY(0px);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+
+    }
+}
+@keyframes rotateBtn {
+    0% {
+        transform: scale(0);
+    }
+
+  
+
+    100% {
+        transform: scale(1);
+
+    }
+}
+
+
