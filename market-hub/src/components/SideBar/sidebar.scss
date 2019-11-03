@@ -2,9 +2,11 @@
     margin-top: 10rem
 }
 .sidebar__content {
+    position: relative;
+  
     @media only screen and (max-width:990px) {
       position: absolute;
-    top: -8rem;
+    top: -8.3rem;
     right: -2px;
     border: none;
     }
@@ -74,4 +76,25 @@
    
     width: 100%;
     transform: scaleY(1);
+}
+
+.logo__box {
+    position: absolute;
+    top:30px;
+    left:30px;
+
+    &--title {
+        color: white;
+        font-size: 22px;
+        font-weight:400;
+        text-align:center;
+        text-transform: uppercase;
+        text-decoration: none;
+      
+        @media only screen and (max-width:990px) {
+      
+           top: 10px;
+           left: 0;
+          }
+    }
 }

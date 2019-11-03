@@ -50,7 +50,12 @@ class HomePage extends Component {
         return (
           <div className='body__template'>
             <div className='sidebar__section'>
+            <div className='logo__box'  >
+            <p className='logo__box--title'>Market-Hub</p>
+            {/* <img className='logo' src='images/logo4.png' alt='marketHub_Logo'/> */}
+        </div>
                 <ToggleIcon />
+
                 <SideBar />
             </div>
             <header className='header__section'>

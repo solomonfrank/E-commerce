@@ -4,7 +4,7 @@
   //  grid-template-columns: 150px 1fr ;
     grid-template-rows: 80vh min-content min-content  repeat(2, min-content);
     grid-template-columns: [sidebar-start ] 15rem [sidebar-end full-start ] 1fr  [center-start] repeat(8,[ col-start ] minmax(min-content, 14rem)[ col-end])  [center-end] 1fr  [full-end];
-  grid-row-gap: 8rem;
+ 
 
   @media only screen and (max-width:990px) {
     grid-template-rows:6rem  80vh min-content min-content  repeat(2, min-content);
