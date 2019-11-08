@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  { signInwithGoogle } from '../../firebase/firebase.utils';
 import InputField from './InputField';
 
 import './form.scss';
@@ -6,21 +7,22 @@ import './form.scss';
 
 class LoginForm extends Component {
 
-state =  {
-formElements:  [
-    {
-        type: 'text',
-        label: 'Full name',
-        id: 1
-    },
-    {
-        type: 'email',
-        label: 'Email address',
-        id: 2
-    }
-]
-}
+  isLoginPage = () => {
+      if( this.props.isLogin){
+          return (
+              <React.Fragment>
+                   <p className='signin__subtext'>or</p>
+                   <div className='form-group form__group--btn3'>
+                     <button onClick = {() => signInwithGoogle() } className='btn__form btn__signin3' type='submit'>Signin with Google</button>
+                     </div>
+              </React.Fragment>
+           
+          )
+      }
+  }
+
     render() {
+        console.log(this.props)
         return (
             <div class="form__wrapper">
   <div className='form__wrapper--image'>
@@ -30,18 +32,18 @@ formElements:  [
       </figure>
   </div>
     <div className='form__wrapper--formContainer'>
-    <div className='form__title'><p>Sign in </p></div>
+    <div className='form__title'><p> { this.props.title} </p></div>
     <form>
         
-                    { this.state.formElements.map( item =>(   <InputField type={ item.type}  label={item.label} key={item.id }/> ))}
+                    { this.props.loginState.map( item =>(   <InputField type={ item.type}  label={item.label} key={item.id }/> ))}
                  <div className='form-group form__group--btn'>
-                     <button className='btn__form btn__signin' type='submit'>Sign in</button>
+                     <button className='btn__form btn__signin' type='submit'>{ this.props.title}</button>
                  </div>
 
-                 <p className='signin__subtext'>or</p>
-                 <div className='form-group form__group--btn3'>
-                     <button className='btn__form btn__signin3' type='submit'>Signin with Google</button>
-                 </div>
+                
+
+                 { this.isLoginPage() }
+                
 
                 
                 </form>

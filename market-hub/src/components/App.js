@@ -1,30 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import React,{ Component } from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import HomePage from '../pages/homepage/HomePage';
-import BagPage from '../pages/bagPage/BagPage';
 import ShopPage from '../pages/shopPage/ShopPage';
 import LoginPage from '../pages/loginPage/LoginPage';
 import SignUpPage from '../pages/signUpPage/SignUpPage';
+import ItemPage from '../pages/ItemPage/ItemPage';
 
 
 
 import './App.scss';
 
-const App = () => {
-
+const App  = () => { 
     return ( 
-        <div>
+            <div>
+               
+                <Router>
+                    <Route exact path ='/' component={HomePage} />
+                    <Route exact path ='/shop' component={ShopPage} />
+                    <Route exact path ='/login' component={LoginPage} />
+                    <Route exact path ='/signup' component={SignUpPage} />
+                    <Route exact path ='/item' component={ItemPage} />
+                 </Router>
            
-            <Router>
-                <Route exact path ='/' component={HomePage} />
-                <Route exact path ='/shop' component={ShopPage} />
-                <Route exact path ='/login' component={LoginPage} />
-                <Route exact path ='/signup' component={SignUpPage} />
-             </Router>
-       
-        </div>
-    )
+            </div>
+        )
+    
+   
 }
 
 export default App;

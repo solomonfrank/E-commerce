@@ -21,19 +21,19 @@ const ToggleIcon = () => {
 
              <ul className='navigation__list'>
                 <li className='navigation__list--item'>
-                    <Link className='navigation__list--link'>Shop</Link>
+                    <Link  to='/shop' className='navigation__list--link'>Shop</Link>
                  </li>
                  <li className='navigation__list--item'>
-                    <Link className='navigation__list--link'>Clothes</Link>
+                    <Link to='/clothes' className='navigation__list--link'>Clothes</Link>
                  </li>
                  <li className='navigation__list--item'>
-                    <Link className='navigation__list--link'>Bags</Link>
+                    <Link to='/bags' className='navigation__list--link'>Bags</Link>
                  </li>
                  <li className='navigation__list--item'>
-                    <Link className='navigation__list--link'>Sign in</Link>
+                    <Link to='/signin' className='navigation__list--link'>Sign in</Link>
                  </li>
                  <li className='navigation__list--item'>
-                    <Link className='navigation__list--link'>Sign up</Link>
+                    <Link to='signup' className='navigation__list--link'>Sign up</Link>
                  </li>
             </ul>
             </div>

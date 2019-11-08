@@ -13,10 +13,27 @@ import './loginPage.scss';
 
 
 class LoginPage extends Component {
+    
+state =  {
+    formTitle: 'login user',
+    isLoginPage: true,
+    formElements:  [
+        {
+            type: 'text',
+            label: 'Full name',
+            id: 1
+        },
+        {
+            type: 'email',
+            label: 'Email address',
+            id: 2
+        }
+    ]
+    }
    
 
     render() {
-      
+     
         return (
           <div className='body__template'>
             <div className='sidebar__section'>
@@ -31,7 +48,7 @@ class LoginPage extends Component {
 
             <section className='main__section content'>
            
-           <LoginForm />
+           <LoginForm  isLogin={ this.state.isLoginPage} loginState={ this.state.formElements }  title={ this.state.formTitle} />
           
             
             </section>

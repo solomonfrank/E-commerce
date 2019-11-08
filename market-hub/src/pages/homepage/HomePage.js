@@ -12,6 +12,10 @@ import './homePage.scss';
 
 
 class HomePage extends Component {
+  constructor(props) {
+      super(props);
+      console.log(props)
+  }
     state = {
         menuItem: [
             {
@@ -50,60 +54,41 @@ class HomePage extends Component {
         return (
           <div className='body__template'>
             <div className='sidebar__section'>
-            <div className='logo__box'  >
-            <p className='logo__box--title'>Market-Hub</p>
-            {/* <img className='logo' src='images/logo4.png' alt='marketHub_Logo'/> */}
-        </div>
+                <div className='logo__box'  >
+                <p className='logo__box--title'>Market-Hub</p>
+                </div>
                 <ToggleIcon />
-
                 <SideBar />
             </div>
             <header className='header__section'>
-            <Header /> 
-
+                <Header /> 
             </header>
-
             <section className='main__section content'>
-           
-            <div className='product__item'>
-                 <h2 className='product__item--title'>
-                     Product Category
-                 </h2>
-             </div>
-          
-            <div className='container'>
-             
-                { menuItem.map( ( { id, category, categpory, image})=> ( <MenuItem key={ id } image={ image} category={category}/>))}
-               
-             </div>
+             <div className='product__item'>
+                <h2 className='product__item--title'>Product Category</h2>
+              </div>
+              <div className='container'>
+                 { menuItem.map( ( { id, category, categpory, image})=> ( <MenuItem key={ id } image={ image} category={category}/>))}
+              </div>
+            </section>
+                <section className='article__section'>
+                <div className='product__item'>
+                    <h2 className='product__item--title'>Hot Products</h2>
+                </div>
             
-            </section>
-           
-            <section className='article__section'>
-            <div className='product__item'>
-                 <h2 className='product__item--title'>
-                     Hot Products
-                 </h2>
-             </div>
-          
-            <div className='container'>
-             
-                { menuItem.map( ( { id, category, categpory, image})=> ( <Category key={ id } image={ image} category={category}/>))}
-               
-             </div>
-            </section>
-            <section className='about__section'>
-            <AboutUs />
-            </section>
-            <footer className='footer__section'>
-                <Footer />
-            </footer>
-           
-            
-          
-           
-           
-             </div>
+                <div className='container'>
+                
+                    { menuItem.map( ( { id, category, categpory, image})=> ( <Category key={ id } image={ image} category={category}/>))}
+                
+                </div>
+                </section>
+                <section className='about__section'>
+                <AboutUs />
+                </section>
+                <footer className='footer__section'>
+                    <Footer />
+                </footer>
+           </div>
              )
             }
 }

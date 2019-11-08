@@ -27,7 +27,7 @@ const MenuItem = ( { image, category, title, history, match}) => {
              <p className='content__collection--box1--text'>Quality  and affordables Bags</p>
              </div> 
                 <div className='content__collection--box2'>
-                <Link className='content__collection--btn'>{ category } Collection</Link>
+                <Link to='/' className='content__collection--btn'>{ category } Collection</Link>
                 </div> 
              </div>
         </div>
