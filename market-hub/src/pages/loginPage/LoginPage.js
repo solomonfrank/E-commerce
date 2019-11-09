@@ -6,7 +6,7 @@ import AboutUs from '../../components/AboutUs/AboutUs';
 import SideBar from '../../components/SideBar/SideBar';
 import Footer from '../../components/Footer/Footer'
 import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
-import LoginForm from '../../components/Form/Form';
+import LoginForm from '../../components/Form/LoginForm';
 
 
 import './loginPage.scss';
