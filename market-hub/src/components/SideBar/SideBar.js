@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import firebase, { auth, firestore }  from '../../firebase/firebase.utils';
+import { auth, firestore }  from '../../firebase/firebase.utils';
+import { setCurrentUser, setSignOut } from '../../redux/reducer/actionCreators/userActionCreator';
 
 import './sidebar.scss';
 
@@ -23,18 +24,16 @@ export const storeUserInFirebase =  async ( userAuth, additionalFields) => {
  }
 
 class SideBar extends Component {
-  state = {
-   currentUser: null
-  }
-  
-  unsubscribeFromAuth = null;
+
+   unsubscribeFromAuth = null;
   
   componentDidMount() {
+    
     this.unsubscribeFromAuth =  auth.onAuthStateChanged( async userAuth => {
       if (userAuth) {
         const userRef = await storeUserInFirebase(userAuth);
         userRef.onSnapshot( snapShot => {
-          this.setState({
+          this.props.setCurrentUser({
             currentUser: {
               id: snapShot.id,
               ...snapShot.data()
@@ -46,15 +45,21 @@ class SideBar extends Component {
   }
 
   signOutUser = () => {
+    
     auth.signOut();
-   this.setState({currentUser: null})
+   
+  // this.setState({currentUser: null})
+  console.log(this.props)
+
+  this.props.logout();
   }
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
 
   renderSignOutHelper = () => {
-    if ( this.state.currentUser) {
+    console.log(this.props.currentUser)
+    if ( this.props.currentUser) {
       return (
         <React.Fragment>
           <li className='category__item'>
@@ -95,7 +100,13 @@ class SideBar extends Component {
     )
   }
 }
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
-})
-export default connect(mapStateToProps) (SideBar);
+const mapStateToProps = (state )=> ({
+    currentUser: state.user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+   logout: () => dispatch(setSignOut())
+ 
+   })
+export default connect(mapStateToProps, mapDispatchToProps ) (SideBar);

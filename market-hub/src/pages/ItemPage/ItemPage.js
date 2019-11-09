@@ -63,7 +63,7 @@ class ItemPage extends Component {
                     <ul className='cart__icon'>
                      <li className='cart__icon--list cart__icon--one'>
                          <Link className='cart__link'>
-                         <img className='image__cart' src='images/cart.png'alt='cart-icon' />
+                         <img className='image__cart' src='images/cart.png' alt='cart-icon'/>
                         
                          <sup className='icon__count--wrapper'> <span className='cart__count'>0</span></sup>
                          </Link>
@@ -81,7 +81,7 @@ class ItemPage extends Component {
             <div className='item__gallery'>
                     <div className='item__cart--image'>
                         <figure className='cart__image--wrapper'>
-                            <img src='images/cloth1.webp'className='cart__image' />
+                            <img src='images/cloth1.webp'className='cart__image' alt='cloth pic' />
                         </figure>
                     </div>
                     <div className='item__gallery--cart'>

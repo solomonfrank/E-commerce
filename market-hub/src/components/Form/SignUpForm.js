@@ -72,7 +72,7 @@ handleSubmit = async (event) => {
     <div className='form__wrapper--image'>
       <div> <p className='image__title'>Welcome, Sign in to manage to your shopping activities</p></div>
       <figure className='image__figure'>
-        <img src='images/signin.png' className='image__pix' />
+        <img src='images/signin.png' className='image__pix' alt='signup pic' />
       </figure>
     </div>
     <div className='form__wrapper--formContainer'>
