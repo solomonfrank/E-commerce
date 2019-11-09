@@ -60,7 +60,12 @@ class LoginForm extends Component {
     <div className='form__wrapper--formContainer'>
     <div className='form__title'><p> { this.props.title} </p></div>
     <form onSubmit={this.submitHandler}>
-      { this.state.formElements.map( item =>( <InputField type={ item.type} name={item.name} getUserInput={ this.getUserInput } label={item.label} key={item.id }/> ))}
+      { this.state.formElements.map( item =>( 
+      <InputField 
+        type={ item.type}
+        name={item.name}
+        getUserInput={ this.getUserInput }
+        label={item.label} key={item.id }/> ))}
       <div className='form-group form__group--btn'>
         <button className='btn__form btn__signin' type='submit'>Login</button>
       </div>
