@@ -45,20 +45,16 @@ class SideBar extends Component {
   }
 
   signOutUser = () => {
-    
     auth.signOut();
-   
-  // this.setState({currentUser: null})
-  console.log(this.props)
-
-  this.props.logout();
+    this.props.logout();
   }
+  
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
 
   renderSignOutHelper = () => {
-    console.log(this.props.currentUser)
+   
     if ( this.props.currentUser) {
       return (
         <React.Fragment>

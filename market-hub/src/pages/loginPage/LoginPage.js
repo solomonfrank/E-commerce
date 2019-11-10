@@ -5,6 +5,7 @@ import SideBar from '../../components/SideBar/SideBar';
 import Footer from '../../components/Footer/Footer'
 import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
 import LoginForm from '../../components/Form/LoginForm';
+import CartNavHeader from '../../components/CartNavHeader/CartNavHeader';
 
 
 import './loginPage.scss';
@@ -45,7 +46,7 @@ state =  {
            
 
             <section className='main__section content'>
-           
+            <CartNavHeader />
            <LoginForm  isLogin={ this.state.isLoginPage} loginState={ this.state.formElements }  title={ this.state.formTitle} />
           
             

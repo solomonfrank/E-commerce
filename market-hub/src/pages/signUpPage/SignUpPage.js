@@ -5,6 +5,7 @@ import SideBar from '../../components/SideBar/SideBar';
 import Footer from '../../components/Footer/Footer'
 import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
 import SignUpForm from '../../components/Form/SignUpForm';
+import CartNavHeader from '../../components/CartNavHeader/CartNavHeader';
 
 import './signUpPage.scss';
 
@@ -20,9 +21,12 @@ class SignUpPage extends Component {
         {/* <img className='logo' src='images/logo4.png' alt='marketHub_Logo'/> */}
         </div>
         <ToggleIcon />
+       
         <SideBar />
+        
         </div>
         <section className='main__section content'>
+        <CartNavHeader />
           <SignUpForm />
         </section>
         <section className='about__section'>

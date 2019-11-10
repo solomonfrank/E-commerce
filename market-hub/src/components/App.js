@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import HomePage from '../pages/homepage/HomePage';
 import ShopPage from '../pages/shopPage/ShopPage';
@@ -11,22 +12,30 @@ import ItemPage from '../pages/ItemPage/ItemPage';
 
 import './App.scss';
 
-const App  = () => { 
+
+class App extends Component { 
+  render() {
     return ( 
-            <div>
-               
-                <Router>
-                    <Route exact path ='/' component={HomePage} />
-                    <Route exact path ='/shop' component={ShopPage} />
-                    <Route exact path ='/login' component={LoginPage} />
-                    <Route exact path ='/signup' component={SignUpPage} />
-                    <Route exact path ='/item' component={ItemPage} />
-                 </Router>
-           
-            </div>
-        )
+      <div>
+         
+          <Router>
+              <Route exact path ='/' component={HomePage} />
+              <Route exact path ='/shop' component={ShopPage} />
+              <Route exact path ='/login' render={ () =>this.props.currentUser ? <Redirect to='/' /> : <LoginPage />  } />
+              <Route exact path ='/signup' component={SignUpPage} />
+              <Route exact path ='/item/:name' component={ItemPage} />
+           </Router>
+     
+      </div>
+  )
+   }
+    
     
    
 }
 
-export default App;
+const mapStateToProp = ({ user }) => ({
+    currentUser: user.currentUser
+
+})
+export default connect( mapStateToProp )(App);

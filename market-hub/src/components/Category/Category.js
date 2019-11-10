@@ -19,13 +19,13 @@ const Category = ( { image, category, title, history, match}) => {
        
          <div className='item--picture' style={ style }></div>
            
-        <div className='item__content' onClick={ () => history.push(`${match.url}${category}`) }>
+        <div className='item__content' onClick={ () => history.push(`/item/${category}`) }>
             <p className='item__content--title'>Italian light color bag</p>
             <p className='item__content--price'>N3000</p>
          
         </div> 
         <div className='item--order'>
-        <Link className='item--order--link'>Order Now</Link>
+        <Link to= {`/item/${category}`} className='item--order--link'>Order Now</Link>
         </div>
         
      

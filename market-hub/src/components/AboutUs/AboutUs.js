@@ -28,9 +28,9 @@ const AboutUs = () => {
                 </div>
                 <div className='row__image'>
                     <div className='composition'>
-                        <img src='images/shopping1.jpg' alt='photo1' className='composition__photo composition__photo--1' />
-                        <img src='images/shopping2.jpg' alt='photo2' className='composition__photo composition__photo--2' />
-                        <img src='images/shopping3.jpg' alt='photo3' className='composition__photo composition__photo--3' />
+                        <img src='/images/shopping1.jpg' alt='photo1' className='composition__photo composition__photo--1' />
+                        <img src='/images/shopping2.jpg' alt='photo2' className='composition__photo composition__photo--2' />
+                        <img src='/images/shopping3.jpg' alt='photo3' className='composition__photo composition__photo--3' />
                     </div>
                 </div>
             </div>
