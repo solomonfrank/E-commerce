@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { selectCartCount } from '../../redux/selectors/cardSelector';
 
 import './CartNavHeader.scss';
 
@@ -27,9 +28,9 @@ const CartNavHeader = ({ itemCount }) => {
   )
 }
 
-const mapStateToProps = ({ cart: { cart }}) => {
+const mapStateToProps = (state) => {
   return {
-    itemCount: cart.reduce(( sum, currItem) => sum +currItem.quantity, 0)
-  }
+    itemCount: selectCartCount(state)
+}
 }
 export default connect(mapStateToProps)(CartNavHeader);

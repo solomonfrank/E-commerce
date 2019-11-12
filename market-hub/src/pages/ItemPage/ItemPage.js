@@ -9,7 +9,13 @@ import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
 import CartNavHeader from '../../components/CartNavHeader/CartNavHeader';
 import { addItem } from '../../redux/reducer/actionCreators/cartActionCreator';
 
+import { toggleCart } from '../../redux/reducer/actionCreators/toggleActionCreator';
+import Modal from '../../modal/Checkout';
+import ViewCheckOut from '../../modal/ViewCheckOut';
+
+
 import './itemPage.scss';
+
 
 
 
@@ -20,39 +26,70 @@ class ItemPage extends Component {
           id: 1,
           category: 'bag',
           image: 'images/bag2.webp',
-          pathName : 'bag'
+          pathName : 'bag',
+          price: 100
       },
       {
           id: 2,
             category: 'watch',
             image: 'images/watch1.webp',
-            pathName : 'watch'
+            pathName : 'watch',
+            price: 100
         },
         {
           id: 3,
             category: 'slipper',
             image: 'images/slipper1.webp',
-            pathName : 'slipper'
+            pathName : 'slipper',
+            price: 100
         },
         {
           id: 5,
             category: 'cloth',
             image: 'images/cloth2.jpg',
-            pathName : 'watch'
+            pathName : 'watch',
+            price: 100
         },
-      ]
+      ],
+     isHidden: false
+    }
+
+    toggleCartModal = () => {
+     
+      this.setState(prevState => ({
+        isHidden: !prevState.isHidden
+      }))
     }
   addItemTocart = () => {
    const {  addToCart , match:{ params: { name }}} = this.props;
    const item = this.state.menuItem.find( item => item.category === name)
+  
   addToCart(item);
+  this.props.toggleCartModal();
+ 
    
   }
 
+  renderModal = () => {
+
+    if (this.props.isHidden.isHidden) {
+      
+      return  <ViewCheckOut isHidden= {this.toggleCartModal} />
+    }else {
+      return null
+    }
+  
+  }
+ 
   render() {
+  console.log('render1')
     const { menuItem } = this.state;
     return (
+      
       <div className='body__template'>
+<Modal>
+      {this.renderModal()}
+     </Modal>   
         <div className='sidebar__section'>
         <div className='logo__box'  >
         <p className='logo__box--title'>Market-Hub</p>
@@ -106,8 +143,9 @@ class ItemPage extends Component {
                   <span className='display__count'>0</span>
                 <button  type='button' className='btn__cart'>+</button>
               </div>
-
+             
               <div className='cart__btn'>
+             
               <button onClick={ this.addItemTocart } className='btn__addCart' type='button'> Add to Cart</button>
               </div>
               <div className='desc'>
@@ -139,6 +177,7 @@ class ItemPage extends Component {
                   { menuItem.map( ( { id, category, categpory, image})=> ( <Category key={ id } image={ image} category={category}/>))}
               </div>
           </section>
+           
           <section className='about__section'><AboutUs /> </section>
           <footer className='footer__section'><Footer /></footer>
           </div>
@@ -146,10 +185,16 @@ class ItemPage extends Component {
       }
 }
 
+
 const mapDispatchToProp = (dispatch) => {
  return {
-   addToCart: item => dispatch(addItem(item))
+   addToCart: item => dispatch(addItem(item)),
+   toggleCartModal: () => dispatch(toggleCart())
  }
 }
+
+const mapStateToProp = (state) =>({
+  isHidden: state.isHidden
+})
 const withRoute = withRouter((ItemPage));
-export default connect(null, mapDispatchToProp)(withRoute)
+export default connect(mapStateToProp, mapDispatchToProp)(withRoute)

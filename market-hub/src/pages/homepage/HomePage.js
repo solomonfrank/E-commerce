@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer'
 import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
 
 
+
 import './homePage.scss';
 
 
@@ -19,25 +20,29 @@ class HomePage extends Component {
                id: 1,
                 category: 'bag',
                 image: 'images/bag2.webp',
-                pathName : 'bag'
+                pathName : 'bag',
+                price: 100
             },
             {
                 id: 2,
                  category: 'watch',
                  image: 'images/watch1.webp',
-                 pathName : 'watch'
+                 pathName : 'watch',
+                 price: 100
              },
              {
                 id: 3,
                  category: 'slipper',
                  image: 'images/slipper1.webp',
-                 pathName : 'slipper'
+                 pathName : 'slipper',
+                 price: 100
              },
              {
                 id: 5,
                  category: 'cloth',
                  image: 'images/cloth2.jpg',
-                 pathName : 'watch'
+                 pathName : 'watch',
+                 price: 100
              },
        
         
@@ -49,7 +54,11 @@ class HomePage extends Component {
     render() {
         const { menuItem } = this.state;
         return (
+
           <div className='body__template'>
+           
+        
+     
             <div className='sidebar__section'>
                 <div className='logo__box'  >
                 <p className='logo__box--title'>Market-Hub</p>
