@@ -89,7 +89,9 @@ class CheckoutPage extends Component {
             </div>
           </div>
           {this.props.cartItems.cart.map( item =><CheckoutItem  key={item.id} cartItem={ item }/>)}
-          <div>N{this.props.cartTotal}</div>
+          <div className='total'>
+            <span>Total: N{this.props.cartTotal}</span>
+            </div>
            
             </div>
             </header>
