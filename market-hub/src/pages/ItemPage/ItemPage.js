@@ -87,7 +87,7 @@ class ItemPage extends Component {
     return (
       
       <div className='body__template'>
-<Modal>
+     <Modal>
       {this.renderModal()}
      </Modal>   
         <div className='sidebar__section'>
