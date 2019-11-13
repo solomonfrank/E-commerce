@@ -82,7 +82,7 @@ class ItemPage extends Component {
   }
  
   render() {
-  console.log('render1')
+
     const { menuItem } = this.state;
     return (
       
