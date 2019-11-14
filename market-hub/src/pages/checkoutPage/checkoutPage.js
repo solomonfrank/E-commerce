@@ -91,7 +91,9 @@ class CheckoutPage extends Component {
           {this.props.cartItems.cart.map( item =><CheckoutItem  key={item.id} cartItem={ item }/>)}
           <div className='total'>
             <span>Total: N{this.props.cartTotal}</span>
+          
             </div>
+           
            
             </div>
             </header>
