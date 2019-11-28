@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import MenuItem from '../../components/menuItem/MenuItem';
 import Category from '../../components/Category/Category';
-import Header from '../../components/Header/Header';
+ import Header from '../../components/Header/Header';
 import AboutUs from '../../components/AboutUs/AboutUs';
 import SideBar from '../../components/SideBar/SideBar';
 import Footer from '../../components/Footer/Footer'
 import ToggleIcon from '../../components/ToggleIcon/ToggleIcon';
+import { Link } from 'react-router-dom'
+import CartNavHeader from '../../components/CartNavHeader/CartNavHeader';
 
 
 
-import './homePage.scss';
+
+
+
+// import './homePage.scss';
+import  { BodyTemplate, SidebarWrapper, MainContent, ProductContainer,H2} from  './home.style';
 
 
 class HomePage extends Component {
@@ -55,46 +61,56 @@ class HomePage extends Component {
         const { menuItem } = this.state;
         return (
 
-          <div className='body__template'>
+          <BodyTemplate >
            
         
      
-            <div className='sidebar__section'>
+            <SidebarWrapper>
                 <div className='logo__box'  >
-                <p className='logo__box--title'>Market-Hub</p>
+                <Link to='/' className='logo__box--title'>Market-Hub</Link>
                 </div>
                 <ToggleIcon />
                 <SideBar />
-            </div>
-            <header className='header__section'>
-                <Header /> 
-            </header>
-            <section className='main__section content'>
-             <div className='product__item'>
-                <h2 className='product__item--title'>Product Category</h2>
-              </div>
-              <div className='container'>
+                
+            </SidebarWrapper>
+            <MainContent>
+            <CartNavHeader />
+             <Header /> 
+
+
+           <div className='heading'>
+           <H2>Product Category</H2>
+           </div>
+            {<ProductContainer>
+            <div className='container'>
                  { menuItem.map( ( { id, category, categpory, image})=> ( <MenuItem key={ id } image={ image} category={category}/>))}
               </div>
-            </section>
-                <section className='article__section'>
-                <div className='product__item'>
-                    <h2 className='product__item--title'>Hot Products</h2>
-                </div>
+            </ProductContainer>}
+            <div className='heading'>
+           <H2>Product Category</H2>
+           </div>
+                <ProductContainer>
+               
+                
+              
             
                 <div className='container'>
                 
                     { menuItem.map( ( { id, category, categpory, image})=> ( <Category key={ id } image={ image} category={category}/>))}
                 
                 </div>
-                </section>
+         
+                </ProductContainer>
                 <section className='about__section'>
                 <AboutUs />
                 </section>
                 <footer className='footer__section'>
                     <Footer />
                 </footer>
-           </div>
+
+            </MainContent>
+           
+           </BodyTemplate>
              )
             }
 }

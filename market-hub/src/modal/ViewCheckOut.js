@@ -9,9 +9,9 @@ const ViewCheckout = ( props ) => {
 
   return (
     
-    <div className='popup'>
+    <div className='uk-flex-top popup'>
        
-         <div className='popup__content'>
+         <div className='uk-modal-dialog uk-margin-auto-vertical popup__content'>
 
            <p className='flash__item'>{ props.title } cloth successfully added</p>
            <div className='btn__group'>

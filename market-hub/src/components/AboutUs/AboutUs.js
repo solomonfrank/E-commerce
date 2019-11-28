@@ -25,6 +25,7 @@ const AboutUs = () => {
                          when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
                        
                           </p>
+                          
                 </div>
                 <div className='row__image'>
                     <div className='composition'>
@@ -33,6 +34,7 @@ const AboutUs = () => {
                         <img src='/images/shopping3.jpg' alt='photo3' className='composition__photo composition__photo--3' />
                     </div>
                 </div>
+              
             </div>
         </section>
     )

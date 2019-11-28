@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import { userReducer } from '../reducer/userReducer/userReducer';
 import { cartReducer } from '../reducer/cartReducer/cartReducer'
 import { toggleReducer } from '../reducer/toggleCartReducer/toggleCartReducer';
+import errorReducer from '../reducer/errorReducer';
 
 const persistConfig = {
     key: 'root',
@@ -15,6 +16,7 @@ export const reducer = combineReducers({
     user: userReducer,
     cart: cartReducer,
     isHidden: toggleReducer,
+    errorMessage: errorReducer,
     menuItem: [
         {
             id: 1,

@@ -1,0 +1,63 @@
+.row-sale {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    margin-bottom: 30px
+
+}
+
+.daily-total {
+  flex-basis: 1;
+text-align: center;
+
+.amt-total {
+    font-size: 20px;
+    font-weight: 400;
+  
+
+}
+
+}
+
+.graph {
+  text-align: center
+}
+.user-info{
+  color: rgba(0,0,0,0.7);
+  line-height: 1.7;
+  font-size: 17px
+}
+i.icon{
+  font-size: 25px;
+  margin-right:20px
+}
+
+.edit-profile {
+  display: block;
+  padding: 8px;
+  border: 1px solid goldenrod;
+  text-decoration: none;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  color:gray;
+  border-radius: 5px;
+ 
+  font-size: 18px;
+  margin-top: 40px
+}
+.icon-overview {
+  font-size: 50px;
+  color: goldenrod
+}
+
+.rows {
+  width: 90%;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 50px
+  }
+  

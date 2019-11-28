@@ -15,9 +15,15 @@ body {
     line-height: 1.7;
     color:#777;
     font-size: 16px; 
-    background-color: white;
+    // background-color: rgb(253, 247, 231);
     box-sizing: border-box;
+      background-color: rgba(230, 223, 223, 0.192);
 
     color: black !important
+}
+
+:root {
+    --primary-color: goldenrod;
+    --secondary-color: white;
 }
 

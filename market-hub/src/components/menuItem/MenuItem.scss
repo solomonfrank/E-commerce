@@ -6,7 +6,10 @@
     height: 30rem;
     border-radius: 6px;
     padding: 0;
+    width: 90%;
  
+    margin-left: auto;
+    margin-right: auto;
  
    
     &:first-child {
@@ -31,9 +34,12 @@
   backface-visibility: hidden;
  
   &--back {
-        background-image: linear-gradient(to right, rgba(255, 191, 0, 0.925),rgba(255, 191, 0, 0.925));
+      background-color: white;
         transform: rotateY(180deg);
         height:27rem;
+       
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);;
+
        
         
        }
@@ -60,7 +66,7 @@
     background-size: cover;
     height:25rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0,0.7);
-
+object-fit: cover;
    
     width: 100%;
     
@@ -77,7 +83,7 @@
         text-align: center;
         font-size: 19px;
        background-color: goldenrod;
-    color: white;
+    color: black;
 
     }
 
@@ -99,19 +105,20 @@ position: absolute;
       }
   }
    &--btn {
-    border: none;
-    border-radius: 23px;
+    border: 1px solid rgba(0,0,0,0.08);
+   
    text-align: center;
-    padding: 20px;
+
    
     text-transform: uppercase;
-    background-color:white;
-    color: rgb(255,191,0);
+    background-color: goldenrod;
+    color: white;
     text-decoration: none;
     font-weight: 400;
     display:  inline-block;
     font-size:18px;
     transition: all 1s;
+    padding: 10px 50px
     
   
 }

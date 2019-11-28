@@ -94,8 +94,9 @@
         left: 50%;
         transform: translate(-50%,50%);
         z-index:2000;
-        transition: all .3s;
+        transition: all .2s ease-in;
         text-align: center;
+        margin-top: -90px;
        
          &--item {
            display: block;

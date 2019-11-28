@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+
+import ButtonLink from '../utils/Button'
 
 import './header.scss';
 
@@ -13,7 +15,8 @@ const Header = () => {
                 <span className='header__text--primary'>Flash Sale</span>
                 <span className='header__text--sub'>Market Place for all</span>
             </h1>
-            <Link to='/'className='header__text--btn'>Shop Now</Link>
+          
+            <ButtonLink color='white' background='goldenrod' >Shop Now</ButtonLink>
         </div>
         </header>
     )

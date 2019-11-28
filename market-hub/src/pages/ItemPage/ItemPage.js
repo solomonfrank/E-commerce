@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import Category from '../../components/Category/Category';
 import AboutUs from '../../components/AboutUs/AboutUs';
 import SideBar from '../../components/SideBar/SideBar';
@@ -92,7 +92,7 @@ class ItemPage extends Component {
      </Modal>   
         <div className='sidebar__section'>
         <div className='logo__box'  >
-        <p className='logo__box--title'>Market-Hub</p>
+        <Link to='/' className='logo__box--title'>Market-Hub</Link>
         </div>
         <ToggleIcon />
         <SideBar />
@@ -102,7 +102,7 @@ class ItemPage extends Component {
         <div className='item__gallery'>
           <div className='item__cart--image'>
             <figure className='cart__image--wrapper'>
-              <img src='images/cloth1.webp'className='cart__image' alt='cloth pic' />
+              <img src='/images/cloth1.webp'className='cart__image' alt='cloth pic' />
             </figure>
           </div>
             <div className='item__gallery--cart'>
@@ -138,15 +138,11 @@ class ItemPage extends Component {
                 </select>
                 </div>
               </div>
-              <div className='form__btn'>
-                <button type='button' className='btn__cart'> - </button>
-                  <span className='display__count'>0</span>
-                <button  type='button' className='btn__cart'>+</button>
-              </div>
+           
              
               <div className='cart__btn'>
              
-              <button onClick={ this.addItemTocart } className='btn__addCart' type='button'> Add to Cart</button>
+              <button  onClick={ this.addItemTocart } className=' btn__addCart' type='button'> Add to Cart</button>
               </div>
               <div className='desc'>
                 <h2>Description</h2>

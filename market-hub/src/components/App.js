@@ -8,6 +8,7 @@ import LoginPage from '../pages/loginPage/LoginPage';
 import SignUpPage from '../pages/signUpPage/SignUpPage';
 import ItemPage from '../pages/ItemPage/ItemPage';
 import CheckoutPage from '../pages/checkoutPage/checkoutPage';
+import Dashboard from '../pages/dashboard/dashboard'
 
 
 
@@ -23,10 +24,11 @@ class App extends Component {
           <Router>
               <Route exact path ='/' component={HomePage} />
               <Route exact path ='/shop' component={ShopPage} />
-              <Route exact path ='/login' render={ () => this.props.currentUser ? <Redirect to='/' /> : <LoginPage />  } />
+              <Route exact path ='/login' render={ () => this.props.currentUser ? <Redirect to='/dashboard' /> : <LoginPage />  } />
               <Route exact path ='/signup' component={SignUpPage} />
               <Route exact path ='/item/:name' component={ItemPage} />
               <Route exact path ='/checkout' component={CheckoutPage} />
+              <Route exact path ='/dashboard' component={Dashboard} />
            </Router>
      
       </div>

@@ -1,6 +1,5 @@
 
-$color-primary: rgb(255,191,0);
-$color-white:#fff;
+
 .header {
     background-image: linear-gradient(
         to right bottom,
@@ -17,7 +16,7 @@ $color-white:#fff;
         left:30px;
 
         &--title {
-            color: white;
+            color: var(--primary-color);
             font-size: 22px;
             font-weight:400;
             text-align:center;
@@ -88,7 +87,7 @@ $color-white:#fff;
       
     }
     &--btn:hover {
-        background-color: $color-primary;
+     
         color: white;
     }
 }

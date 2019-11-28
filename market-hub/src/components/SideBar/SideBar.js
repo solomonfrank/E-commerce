@@ -79,6 +79,7 @@ class SideBar extends Component {
   render() {
    return (
     <div className='sidebar__content'>
+      
       <ul className='category__list'>
         <li className='category__item'>
           <Link  to='/shop' className='category__link'>Shop</Link>
